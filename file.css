@@ -4,28 +4,38 @@ body {
     background-image: url(https://images.wallpaperscraft.ru/image/plyazh_pesok_palmy_tropiki_90404_1920x1080.jpg);
     background-position: center;
     background-attachment: fixed; */
+    margin:0;
 }
+
+.gridDiv {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:minmax(200px, auto);
+    grid-template-areas: 'sidebar header haeder ' 
+                         'sidebar formDiv .'
+                         'sidebar formDiv .'
+                         'sidebar . . '
+}
+
+ 
 .sidebar {
-    float: left;
-    width:20%;
+    grid-area:sidebar;
     background-color:white;
-    height: 1200px;
 }
 
-.formDiv {
-  
+.formDiv { 
+ grid-area:formDiv;
 }
 
-
- body h1 {
-    float: right;
-    right: 0;
+ header {
+    grid-area:header;
     background: transparent;
 } 
 
 
 .contact_form {
-    display:flex;
+    background-color:white;
 }
+
 
 
