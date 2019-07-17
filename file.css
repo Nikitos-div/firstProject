@@ -11,10 +11,10 @@ body {
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows:minmax(200px, auto);
-    grid-template-areas: 'sidebar header haeder ' 
+    grid-template-areas: 'sidebar header header ' 
                          'sidebar formDiv .'
                          'sidebar formDiv .'
-                         'sidebar . . '
+                         'sidebar . . ';
 }
 
  
@@ -31,10 +31,18 @@ body {
     grid-area:header;
     background: transparent;
 } 
+header h1 {
+    float: right;
+}
 
 
 .contact_form {
     background-color:white;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+
 }
 
 
