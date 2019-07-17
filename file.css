@@ -1,5 +1,6 @@
 body {
-    background-color: orange;
+    /* background-color: orange; */
+    background-repeat: no-repeat no-repeat;
+    background-image: url(https://images.wallpaperscraft.ru/image/plyazh_pesok_palmy_tropiki_90404_1920x1080.jpg);
+    background-position: center;
 }
-
-* {}
