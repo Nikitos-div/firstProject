@@ -1,3 +1,8 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
 body {
     background-color: orange;
     /* background-repeat: no-repeat no-repeat;
@@ -9,18 +14,19 @@ body {
 
 .gridDiv {
     display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 2fr 2r 2fr;
     grid-template-rows:minmax(200px, auto);
     grid-template-areas: 'sidebar header header ' 
                          'sidebar formDiv .'
                          'sidebar formDiv .'
-                         'sidebar . . ';
+                         'sidebar formDiv .';
 }
 
  
 .sidebar {
     grid-area:sidebar;
     background-color:white;
+
 }
 
 .formDiv { 
@@ -43,6 +49,12 @@ header h1 {
     flex-direction: column;
     justify-content: space-around;
 
+}
+
+.contact_form input {
+    margin-bottom: 20px;
+    border-radius:5px;
+    border:1px orange solid;
 }
 
 
