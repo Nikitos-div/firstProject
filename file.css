@@ -5,3 +5,27 @@ body {
     background-position: center;
     background-attachment: fixed; */
 }
+.sidebar {
+    float: left;
+    width:20%;
+    background-color:white;
+    height: 1200px;
+}
+
+.formDiv {
+  
+}
+
+
+ body h1 {
+    float: right;
+    right: 0;
+    background: transparent;
+} 
+
+
+.contact_form {
+    display:flex;
+}
+
+
