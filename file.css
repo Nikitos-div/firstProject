@@ -15,15 +15,17 @@ body {
 .gridDiv {
     display:grid;
     grid-template-columns: 2fr 2r 2fr;
-    grid-template-rows:minmax(200px, auto);
+    grid-template-rows:auto;
     grid-template-areas: 'sidebar header header ' 
                          'sidebar formDiv .'
                          'sidebar formDiv .'
                          'sidebar formDiv .';
+    grid-gap:20px;
 }
 
  
 .sidebar {
+    height:100%;
     grid-area:sidebar;
     background-color:white;
 
@@ -57,5 +59,9 @@ header h1 {
     border:1px orange solid;
 }
 
+
+li {
+    list-style-type: none; 
+   }
 
 
