@@ -31,8 +31,8 @@
        }
     </script>
     <script>
-      function returnToRadio() {
-        document.getElementById('divContactNDFL').style.display='none';
+      function returnToRadio(tagName) {
+        document.getElementById(tagName).style.display='none';
         document.getElementById('radioForm').style.display='block';
       }
     </script>
@@ -61,7 +61,7 @@
     <form class='radio_form'>
      <label> НДФЛ </label><input type='radio' name='1' id='1' value='1' onclick='clickRadio("divContactNDFL")'>
      <label>Отпуск</label><input type='radio' name='1' id='2' value='2' onclick='clickRadio("divContactHolliday")'>
-     <label>Повышение</label><input type='radio' name='1' id='3' value='3' onclick='clickRadio("")'>
+     <label>Повышение</label><input type='radio' name='1' id='3' value='3' onclick='clickRadio("divContactPromotion")'>
     </form>
   </div>
    
@@ -72,7 +72,6 @@
       <input type="text" name="Firstname" placeholder="Введите ваше имя" required />
       <input type="text" name='Lastname' placeholder='Введите ваше фамилию' required/>
       <input type='text' name='Otchestvo' placeholder='Введите ваше Отчество' requied/>
-      
       <input type='tel' name='tel' placeholder='Введите ваш телефон' required/>
       <button type="submit">Отправить форму</button>
       <button type='button' onclick='returnToRadio("divContactNDFL")'>Вернуться к выбору формы</button>
@@ -91,8 +90,20 @@
        <input type='date' required>
        <input type='date' required>
        <button type="submit">Отправить форму</button>
-       <button type='button' onclick='returnToRadio()'>Вернуться к выбору формы</button>
+       <button type='button' onclick='returnToRadio("divContactHolliday")'>Вернуться к выбору формы</button>
      </form>
+  </div>
+
+  <div class='formPromotion' id='divContactPromotion'>
+      <form class='contact_form' action='' method=''> 
+          <input type="text" name="Firstname" placeholder="Введите ваше имя" required />
+          <input type="text" name='Lastname' placeholder='Введите ваше фамилию' required/>
+          <input type='text' name='nameOfYourFather' placeholder='Введите ваше Отчество' requied/>
+          <input type='email' name='email' placeholder="Введите вашу почту " required/>
+          <input type='text' name='text' placeholder="Введите название вашего отдела" required/>
+          <button type="submit">Отправить форму</button>
+          <button type='button' onclick='returnToRadio("divContactPromotion")'>Вернуться к выбору формы</button>
+        </form>
   </div>
 
 

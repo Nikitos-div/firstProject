@@ -96,3 +96,11 @@ a {
     border-radius:10px;
     background:transparent;
 }
+
+.formPromotion {
+    display:none;
+    order:2;
+    border:1px blue solid;
+    border-radius:10px;
+    background:transparent; 
+}
