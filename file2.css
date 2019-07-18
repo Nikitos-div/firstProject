@@ -1,3 +1,38 @@
 * {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+html {
+ background-color:orange;
+ height: 100%;
+}
+
+
+body {
+    margin:0;
+    height:100%;
+
+}
+
+.flexDiv {
+    display:flex;
+    height: 90%;
+    width:100%;
+    align-items: center;
+    justify-items:center;
     
 }
+
+.autorizationForm {
+    background:transparent;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+.footer {
+    background: linear-gradient(45deg,orange, purple);
+}
+
