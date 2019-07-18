@@ -9,7 +9,6 @@ html {
 
 
 body {
-  
     margin:0;
     height:100%;
 
@@ -43,7 +42,7 @@ body {
     order:3;
 } 
 header h1 {
-    float: right;
+    
 }
 
 
