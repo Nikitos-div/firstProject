@@ -5,33 +5,38 @@
   <meta charset='utf-8'>
    <link rel='stylesheet' type='text/css' href='file.css'> 
     <script>
-       function clickRadio() {
+       function clickRadio(tagName) {
+        var divElements= document.getElementById('radioForm');
+        var radioElements=divElements.getElementsByTagName('input');
 
 
-var divElements= document.getElementById('radioForm');
-var radioElements=divElements.getElementsByTagName('input');
-
-
-for (var i=0;i<radioElements.length; i++) {
-    
-    if  (radioElements[i].value==='1') {
-        document.getElementById('radioForm').style.display='none';
-        document.getElementById('divContactNDFL').style.display='block';
-    } 
-    else {
+      for (var i=0;i<radioElements.length; i++) {
+       if  (radioElements[i].value==='1') {
+         document.getElementById('radioForm').style.display='none';
+         document.getElementById(tagName).style.display='block';
+       } 
+       else {
         if (radioElements[i].value==='2') {
-         document.getElementById('').style.display='block';
+          document.getElementById('radioForm').style.display='none';
+          document.getElementById(tagName).style.display='block';
         }
         else {
             if (radioElements[i].value==='3') {
-                document.getElementById('').style.display='block';
+              document.getElementById('').style.display='block';
             }
         }
     }
-}
+       }
 
-}
+       }
     </script>
+    <script>
+      function returnToRadio() {
+        document.getElementById('divContactNDFL').style.display='none';
+        document.getElementById('radioForm').style.display='block';
+      }
+    </script>
+
 </head>
 
 <body> 
@@ -54,9 +59,9 @@ for (var i=0;i<radioElements.length; i++) {
    
   <div class='divRadio'id='radioForm'>
     <form class='radio_form'>
-     <label>метка1 </label><input type='radio' name='1' id='1' value='1' onclick='clickRadio()'>
-     <label>метка 2</label><input type='radio' name='1' id='2' value='2' >
-     <label>метка 3</label><input type='radio' name='1' id='3' value='3' >
+     <label> НДФЛ </label><input type='radio' name='1' id='1' value='1' onclick='clickRadio("divContactNDFL")'>
+     <label>Отпуск</label><input type='radio' name='1' id='2' value='2' onclick='clickRadio("divContactHolliday")'>
+     <label>Повышение</label><input type='radio' name='1' id='3' value='3' onclick='clickRadio("")'>
     </form>
   </div>
    
@@ -67,11 +72,28 @@ for (var i=0;i<radioElements.length; i++) {
       <input type="text" name="Firstname" placeholder="Введите ваше имя" required />
       <input type="text" name='Lastname' placeholder='Введите ваше фамилию' required/>
       <input type='text' name='Otchestvo' placeholder='Введите ваше Отчество' requied/>
-      <input type='email' name='email' placeholder="Введите вашу почту " required/>
+      
       <input type='tel' name='tel' placeholder='Введите ваш телефон' required/>
       <button type="submit">Отправить форму</button>
+      <button type='button' onclick='returnToRadio("divContactNDFL")'>Вернуться к выбору формы</button>
     </form>
   </div>   
+
+
+
+  <div class='formHoliday' id='divContactHolliday'>
+     <form class='contact_form' action='' method=''> 
+       <input type="text" name="Firstname" placeholder="Введите ваше имя" required />
+       <input type="text" name='Lastname' placeholder='Введите ваше фамилию' required/>
+       <input type='text' name='Otchestvo' placeholder='Введите ваше Отчество' requied/>
+       <input type='email' name='email' placeholder="Введите вашу почту " required/>
+       <label> Выберите промежуток отпуска</label>
+       <input type='date' required>
+       <input type='date' required>
+       <button type="submit">Отправить форму</button>
+       <button type='button' onclick='returnToRadio()'>Вернуться к выбору формы</button>
+     </form>
+  </div>
 
 
   </div>
