@@ -38,8 +38,10 @@ body {
 }
 
  header {
-    margin-left: auto;
+    order:3;
+   
     background: transparent;
+    height:100%;
 } 
 
 
@@ -50,7 +52,7 @@ header h1 {
 
 .contact_form {
     background:transparent;
-     display:flex;
+    display:flex;
     align-items: center;
     flex-direction: column;
     justify-content: space-around;
