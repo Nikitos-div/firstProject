@@ -5,8 +5,33 @@
    <meta charset='utf-8'>
    <link rel='stylesheet' type='text/css' href='file2.css'> 
    <title>Good</title>
-   <script>  
-     
+
+
+   <script> 
+
+   function Autorization() {
+     var autlogin=document.getElementById('login').value;
+     var autpass=document.getElementById('password').value;
+     localStorage.getItem('login',autlogin);
+     localStorage.getItem('pass',autpass);
+     alert('Вы зарегистрированы');
+     window.open('')
+
+    } 
+   </script>
+
+   <script>
+      function foolproof() {
+        var pass=document.getElementById('password').value;
+        var checkPass=document.getElementById('password_check').value;
+        console.log(document.getElementById('password'))
+        if (pass===checkPass) {
+          Autorization();
+          } 
+        else {
+          alert('Пароли не совпадают');    
+    }
+}
    </script>
 </head>
    
@@ -21,7 +46,9 @@
           <input type="email" placeholder='Введите ваш логин' id='login'>
           <label>Пароль</label>
           <input type="password" id='password'>
-          <button>Зарегистрироваться</button>
+          <label>Подтвердите пароль</label>
+          <input type="password" id='password_check'>
+          <button type='button' onclick='foolproof()'>Зарегистрироваться</button>
         </form>
       </div>
 
