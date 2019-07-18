@@ -36,3 +36,20 @@ body {
     background: linear-gradient(45deg,orange, purple);
 }
 
+.formDivRegistration {
+    background:transparent;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    display:none;
+}
+
+.formDiv {
+    background:transparent;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+
+}

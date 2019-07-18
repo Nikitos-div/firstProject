@@ -12,8 +12,8 @@
    function Autorization() {
      var autlogin=document.getElementById('login').value;
      var autpass=document.getElementById('password').value;
-     localStorage.getItem('login',autlogin);
-     localStorage.getItem('pass',autpass);
+     localStorage.setItem('login',autlogin);
+     localStorage.setItem('pass',autpass);
      alert('Вы зарегистрированы');
      window.open('site.html')
 
@@ -33,15 +33,23 @@
     }
 }
    </script>
+
+   <script>
+     function registration(one,two) {
+      document.getElementById(one).style.display='none';
+      document.getElementById(two).style.display='block';
+    } 
+   </script>
+
+
 </head>
    
 <body> 
-   <div class='flexDiv'>
-      <div class='formDiv'>
+   <div class='flexDiv' >
+      <div class='formDiv' id='formAut'>
         <form class='autorizationForm'>
-          <input type="text" name="Firstname" placeholder="Введите ваше имя" required />
-          <input type="text" name='Lastname' placeholder='Введите ваше фамилию' required/>
-          <input type='email' name='email' placeholder="Введите вашу почту " required/>
+          <input type="text" name="Firstname" placeholder="Введите ваше имя" />
+          <input type="text" name='Lastname' placeholder='Введите ваше фамилию' />
           <label>Логин</label>
           <input type="email" placeholder='Введите ваш логин' id='login'>
           <label>Пароль</label>
@@ -49,8 +57,19 @@
           <label>Подтвердите пароль</label>
           <input type="password" id='password_check'>
           <button type='button' onclick='foolproof()'>Зарегистрироваться</button>
+          <button type='radio' name='good' onclick='registration("formAut","formRegistration")' >Уже зарегистрированы?</button>
         </form>
       </div>
+  
+   <div class='formDivRegistration' id='formRegistration'>
+      <form class='autorizationForm'>
+         <label>Логин</label>
+         <input type="email" placeholder='Введите ваш логин' id='login'>
+         <label>Пароль</label>
+         <input type="password" id='password'>
+         <button type='radio' name='good'  onclick='registration( "formRegistration","formAut" )'>Вернуться</button>
+      </form >
+   </div>
 
       <footer>
 
