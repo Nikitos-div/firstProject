@@ -19,7 +19,7 @@ body {
     flex-direction: row;
     height: 100%;
     justify-content: space-between;
-    
+    align-items:center;
 }
 
  
@@ -38,11 +38,13 @@ body {
 }
 
  header {
+    margin-left: auto;
     background: transparent;
-    order:3;
 } 
+
+
 header h1 {
-    
+
 }
 
 
