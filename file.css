@@ -31,6 +31,7 @@ body {
 }
 
 .formDiv { 
+    display:none;
     order:2;
     border:1px blue solid;
     border-radius:10px;
@@ -74,4 +75,20 @@ li {
 
 a {
     text-decoration:none;
+}
+
+.divRadio {
+    order:2;
+}
+
+.divRadio {
+  
+
+}
+
+.radio_form {
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
 }
