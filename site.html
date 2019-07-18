@@ -4,7 +4,34 @@
 <head>
   <meta charset='utf-8'>
    <link rel='stylesheet' type='text/css' href='file.css'> 
-   
+    <script>
+       function clickRadio() {
+
+
+var divElements= document.getElementById('radioForm');
+var radioElements=divElements.getElementsByTagName('input');
+
+
+for (var i=0;i<radioElements.length; i++) {
+    
+    if  (radioElements[i].value==='1') {
+        document.getElementById('radioForm').style.display='none';
+        document.getElementById('divContactNDFL').style.display='block';
+    } 
+    else {
+        if (radioElements[i].value==='2') {
+         document.getElementById('').style.display='block';
+        }
+        else {
+            if (radioElements[i].value==='3') {
+                document.getElementById('').style.display='block';
+            }
+        }
+    }
+}
+
+}
+    </script>
 </head>
 
 <body> 
@@ -25,17 +52,17 @@
     </ul>
   </div>
    
-  <div class='divRadio'>
+  <div class='divRadio'id='radioForm'>
     <form class='radio_form'>
-     <label>метка1 </label> <input type='radio' name='1' value='1' >
-     <label>метка 2</label><input type='radio' name='1' value='2' >
-     <label>метка 3</label><input type='radio' name='1' value='3' >
+     <label>метка1 </label><input type='radio' name='1' id='1' value='1' onclick='clickRadio()'>
+     <label>метка 2</label><input type='radio' name='1' id='2' value='2' >
+     <label>метка 3</label><input type='radio' name='1' id='3' value='3' >
     </form>
   </div>
    
 
 
-  <div class='formDiv'>
+  <div class='formDiv' id='divContactNDFL'>
     <form class="contact_form" action='' method=''> 
       <input type="text" name="Firstname" placeholder="Введите ваше имя" required />
       <input type="text" name='Lastname' placeholder='Введите ваше фамилию' required/>
