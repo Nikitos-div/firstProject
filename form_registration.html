@@ -47,17 +47,17 @@
 <body> 
    <div class='flexDiv' >
       <div class='formDiv' id='formAut'>
-        <form class='autorizationForm'>
-          <input type="text" name="Firstname" placeholder="Введите ваше имя" />
-          <input type="text" name='Lastname' placeholder='Введите ваше фамилию' />
+        <form class='autorizationForm' action='' method="">
+          <input type="text" name="Firstname" placeholder="Введите ваше имя" required/>
+          <input type="text" name='Lastname' placeholder='Введите ваше фамилию' required/>
           <label>Логин</label>
           <input type="email" placeholder='Введите ваш логин' id='login'>
           <label>Пароль</label>
           <input type="password" id='password'>
           <label>Подтвердите пароль</label>
           <input type="password" id='password_check'>
-          <button type='button' onclick='foolproof()'>Зарегистрироваться</button>
-          <button type='radio' name='good' onclick='registration("formAut","formRegistration")' >Уже зарегистрированы?</button>
+          <button type='submit'  onclick='foolproof()'>Зарегистрироваться</button>
+          <button type='button'  onclick='registration("formAut","formRegistration")' >Уже зарегистрированы?</button>
         </form>
       </div>
   
@@ -67,14 +67,15 @@
          <input type="email" placeholder='Введите ваш логин' id='login'>
          <label>Пароль</label>
          <input type="password" id='password'>
-         <button type='radio' name='good'  onclick='registration( "formRegistration","formAut" )'>Вернуться</button>
+         <button type='button' name='good'  onclick='registration( "formRegistration" , "formAut" )'>Вернуться</button>
       </form >
    </div>
 
-      <footer>
-
-      </footer>
+      
    </div>
+   <footer>
+         footer text
+   </footer>
 </body>
 
 
