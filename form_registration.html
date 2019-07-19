@@ -12,8 +12,10 @@
    function Autorization() {
      var autlogin=document.getElementById('login').value;
      var autpass=document.getElementById('password').value;
-     localStorage.setItem('login',autlogin);
-     localStorage.setItem('pass',autpass);
+     localStorage.setItem(login,autlogin);
+     console.log(autlogin)
+     localStorage.setItem(pass,autpass);
+     console.log(localStorage.removeItem('login'))
      alert('Вы зарегистрированы');
      window.open('site.html');
     } 
@@ -67,7 +69,7 @@
           <label>Пароль</label>
           <input type="password" id='password' required />
           <label>Подтвердите пароль</label>
-          <input type="password" id='password_check' placeholder='8 символов, латынь, ижний и верхний регистр.'pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*	"  required/>
+          <input type="password" id='password_check' placeholder='8 символов, латынь, ижний и верхний регистр.' pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*	"  required/>
           <button type='submit' id='submitButton' name='Button'  onclick='foolproof()'>Зарегистрироваться</button>
           <button type='button'  onclick='registration("formAut","formRegistration")' >Уже зарегистрированы?</button>
         </form>

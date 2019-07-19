@@ -5,7 +5,22 @@
   <meta charset='utf-8'>
    <link rel='stylesheet' type='text/css' href='fileHome.css'> 
    <title>HOME</title>
-</head>
+
+   <script>
+       function blockForm() {
+        var elements = document.getElementById('formInfo')
+        var element=elements.getElementsByTagName('input');
+        for (var i=0; i<element.length;i++) {
+            element[i].value=localStorage.removeItem('pass');
+            element[i].disabled=1;
+            console.log(element[i]);
+        }
+       }
+
+        document.addEventListener('DOMContentLoaded', blockForm)
+   </script>
+
+</head >
 
 <body>
   <div class='flexDivHome'>
@@ -22,21 +37,14 @@
       <img src='https://peopletalk.ru/wp-content/uploads/2016/11/1480331127.jpg' width='100px' height='100px' class='round'>
 
         <div class='divTable'>
-            <table>
-             <caption>Информация о сотруднике</caption>
-             <tr>
-                 <th>Имя </th>
-                 <td>Nik</td>
-             </tr>
-             <tr>
-                 <th>Фамилия</th>
-                 <td>Ch</td>
-             </tr>
-              <tr> 
-                 <th>Отдел</th>
-                 <td>Corsars</td>
-             </tr>
-             </table>
+         <form class='formInfo' id='formInfo'>
+             <label>Name</label>
+             <input type='text' name='firstname' >
+             <label>Lastname</label>
+             <input type='text' name='Lastname'>
+             <label>Department</label>
+             <input type='text' name='department'>
+         </form>
         </div>
      
     </div>

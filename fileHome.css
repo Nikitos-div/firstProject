@@ -83,5 +83,11 @@ a {
     border:1px grey solid;
 }
 
+.formInfo {
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
 
 
