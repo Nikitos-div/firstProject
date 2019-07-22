@@ -9,13 +9,13 @@
 
    <script> 
 
-   function authorization() {
+   function Autorization() {
      var autlogin=document.getElementById('login').value;
      var autpass=document.getElementById('password').value;
-     localStorage.setItem('login',autlogin);
+     localStorage.setItem(login,autlogin);
      console.log(autlogin)
      localStorage.setItem(pass,autpass);
-     console.log(localStorage.getItem('login'))
+     console.log(localStorage.removeItem('login'))
      alert('Вы зарегистрированы');
      window.open('site.html');
     } 
@@ -37,7 +37,7 @@
         var checkPass=document.getElementById('password_check').value;
         console.log(document.getElementById('password'))
         if (pass===checkPass) {
-          authorization();
+          Autorization();
           } 
         else {
           alert('Пароли не совпадают');    
@@ -61,7 +61,7 @@
 <body> 
    <div class='flexDiv' >
       <div class='formDiv' id='formAut'>
-        <form class='authorizationForm' action='' method="">
+        <form class='autorizationForm' action='' method="">
           <input type="text" name="Firstname" placeholder="Введите ваше имя" required/>
           <input type="text" name='Lastname' placeholder='Введите ваше фамилию' required/>
           <label>Логин</label>
@@ -69,7 +69,7 @@
           <label>Пароль</label>
           <input type="password" id='password' required />
           <label>Подтвердите пароль</label>
-          <input type="password" id='password_check' placeholder='8 символов, латынь, ижний и верхний регистр.' pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*	"  required/>
+          <input type="password" id='password_check'  required/>
           <button type='submit' id='submitButton' name='Button'  onclick='foolproof()'>Зарегистрироваться</button>
           <button type='button'  onclick='registration("formAut","formRegistration")' >Уже зарегистрированы?</button>
         </form>
