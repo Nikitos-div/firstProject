@@ -6,42 +6,38 @@
    <link rel='stylesheet' type='text/css' href='file2.css'> 
    <title>Good</title>
    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-   <script>
-     function check() {
-        localStorage.removeItem('login');
-    if (localStorage.getItem('login') == null && localStorage.getItem('password')==null) {
-       register();
-    } 
-
-    else {
-        window.open('site.html');
-    }
-      
-     } 
-   </script>
-    
-   <script>
-     function register() {
-      <div class ='formDiv' v-html='input_plus'></div>  
-     }  
-   </script>
 </head>
 
 <body>
+  <div id="formDiv">
+    <h1 v-if="isRegistration">
+      зарегистрирован
+    </h1>
+  </div>
   <script>
     new Vue ({
         el:'#formDiv' ,
         data: {
-        input_plus:'<input></input>'
-        } 
-        })
+          isRegistration: false,
+        },
+        created() {
+           localStorage.removeItem('login');
+            if (localStorage.getItem('login') == null && localStorage.getItem('password')==null) {
+              this.register();
+            } 
+
+            else {
+                window.open('site.html');
+            }
+        },
+
+        methods: {
+          register() {
+            this.isRegistration = true;
+          }  
+        }
+    })
   </script>
-  <script type="text/javascript">
-    check()      
-  </script>
-
-
-
 </body>
 
 </html>
