@@ -9,32 +9,36 @@
 </head>
  
 <body>
-  <div id="formDiv">
-    <h1 v-if="isRegistration">
-      зарегистрирован
-    </h1>
+  <div id="flexDiv" class=flexDiv>
+    <div class='formDiv' v-if='seen'>
+        <form class='authorizationForm' action='' method="">
+          <input type="text" name="Firstname" placeholder="Введите ваше имя" required/>
+          <input type="text" name='Lastname' placeholder='Введите ваше фамилию' required/>
+          <label>Логин</label>
+          <input type="email" placeholder='Введите ваш логин' id='login' required/>
+          <label>Пароль</label>
+          <input type="password" id='password' required />
+          <label>Подтвердите пароль</label>
+          <input type="password" id='password_check'  required/>
+          <button type='submit' id='submitButton' name='Button'  onclick='foolproof()'>Зарегистрироваться</button>
+        </form> 
+     </div>
   </div>
   <script>
     new Vue ({
-        el:'#formDiv' ,
+        el:'#flexDiv' ,
         data: {
-          isRegistration: false,
+          seen:true,
         },
         created() {
            localStorage.removeItem('login');
             if (localStorage.getItem('login') == null && localStorage.getItem('password')==null) {
-              this.register();
+              this.seen=true;
             } 
 
             else {
                 window.open('site.html');
             }
-        },
-
-        methods: {
-          register() {
-            this.isRegistration = true;
-          }  
         }
     })
   </script>
