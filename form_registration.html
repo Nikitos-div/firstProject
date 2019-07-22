@@ -12,7 +12,7 @@
 
 
 
-   function Autorization() {
+   function authorization() {
      var autlogin=document.getElementById('login').value;
      var autpass=document.getElementById('password').value;
      localStorage.setItem(login,autlogin);
@@ -40,7 +40,7 @@
         var checkPass=document.getElementById('password_check').value;
         console.log(document.getElementById('password'))
         if (pass===checkPass) {
-          Autorization();
+          authorization();
           } 
         else {
           alert('Пароли не совпадают');    
