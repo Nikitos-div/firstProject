@@ -1,5 +1,3 @@
-
-
 function authorization() {
     var autlogin = document.getElementById('login').value;
     var autpass = document.getElementById('password').value;
@@ -25,8 +23,7 @@ function foolproof() {
     console.log(document.getElementById('password'))
     if (pass === checkPass) {
         authorization();
-    }
-    else {
+    } else {
         alert('Пароли не совпадают');
     }
 
@@ -36,4 +33,45 @@ function foolproof() {
 function registration(one, two) {
     document.getElementById(one).style.display = 'none';
     document.getElementById(two).style.display = 'block';
-} 
+}
+
+function blockForm() {
+    var elements = document.getElementById('formInfo')
+    var element = elements.getElementsByTagName('input');
+    for (var i = 0; i < element.length; i++) {
+        element[i].value = localStorage.removeItem('pass');
+        element[i].disabled = 1;
+        console.log(element[i]);
+    }
+}
+
+
+function clickRadio(tagName) {
+    var divElements = document.getElementById('radioForm');
+    var radioElements = divElements.getElementsByTagName('input');
+
+
+    for (var i = 0; i < radioElements.length; i++) {
+        if (radioElements[i].value === '1') {
+            document.getElementById('radioForm').style.display = 'none';
+            document.getElementById(tagName).style.display = 'block';
+        } else {
+            if (radioElements[i].value === '2') {
+                document.getElementById('radioForm').style.display = 'none';
+                document.getElementById(tagName).style.display = 'block';
+            } else {
+                if (radioElements[i].value === '3') {
+                    document.getElementById('radioForm').style.display = 'none';
+                    document.getElementById(tagname).style.display = 'block';
+                }
+            }
+        }
+    }
+
+}
+
+
+function returnToRadio(tagName) {
+    document.getElementById(tagName).style.display = 'none';
+    document.getElementById('radioForm').style.display = 'block';
+}

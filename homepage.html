@@ -5,19 +5,10 @@
   <meta charset='utf-8'>
    <link rel='stylesheet' type='text/css' href='fileHome.css'> 
    <title>HOME</title>
+   <script src="functionsForSite.js"></script>
 
    <script>
-       function blockForm() {
-        var elements = document.getElementById('formInfo')
-        var element=elements.getElementsByTagName('input');
-        for (var i=0; i<element.length;i++) {
-            element[i].value=localStorage.removeItem('pass');
-            element[i].disabled=1;
-            console.log(element[i]);
-        }
-       }
-
-        document.addEventListener('DOMContentLoaded', blockForm)
+     document.addEventListener('DOMContentLoaded', blockForm)
    </script>
 
 </head >

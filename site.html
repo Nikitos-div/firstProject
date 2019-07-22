@@ -4,42 +4,7 @@
 <head>
   <meta charset='utf-8'>
    <link rel='stylesheet' type='text/css' href='file.css'> 
-    <script>
-       function clickRadio(tagName) {
-        var divElements= document.getElementById('radioForm');
-        var radioElements=divElements.getElementsByTagName('input');
-
-
-      for (var i=0;i<radioElements.length; i++) {
-       if  (radioElements[i].value==='1') {
-         document.getElementById('radioForm').style.display='none';
-         document.getElementById(tagName).style.display='block';
-       } 
-       else {
-        if (radioElements[i].value==='2') {
-          document.getElementById('radioForm').style.display='none';
-          document.getElementById(tagName).style.display='block';
-        }
-        else {
-            if (radioElements[i].value==='3') {
-              document.getElementById('radioForm').style.display='none';
-              document.getElementById(tagname).style.display='block';
-            }
-        }
-    }
-       }
-
-       }
-    </script>
-    <script>
-      function returnToRadio(tagName) {
-        document.getElementById(tagName).style.display='none';
-        document.getElementById('radioForm').style.display='block';
-      }
-    </script> 
-
-  
-
+    <script src="functionsForSite.js"></script>
 </head>
 
 <body> 
