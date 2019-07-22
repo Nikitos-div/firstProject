@@ -1,25 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html >
 
 <head>
-  <meta charset='utf-8'>
-  <link rel='stylesheet' type='text/css' href='file.css'> 
-  <title>New Page</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+   <meta charset='utf-8'>
+   <link rel='stylesheet' type='text/css' href='file2.css'> 
+   <title>Good</title>
+   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+   <script>
+     function check() {
+        localStorage.removeItem('login');
+    if (localStorage.getItem('login') == null && localStorage.getItem('password')==null) {
+       register();
+    } 
+
+    else {
+        window.open('site.html');
+    }
+      
+     } 
+   </script>
+    
+   <script>
+     function register() {
+      <div class ='formDiv' v-html='input'></div>  
+     }  
+   </script>
 </head>
 
 <body>
-       
-
   <script>
-    new Vue({
-        el='#vueDiv',
+    new Vue ({
+        el:'#formDiv' ,
         data: {
-          diva:'<div><h1></h1></div>'
-        },
-    })
+        input:'<input></input>'
+        } 
+        })
   </script>
-  
+  <script type="text/javascript">
+    check();       
+  </script>
+
+
+
+
 </body>
 
 </html>
