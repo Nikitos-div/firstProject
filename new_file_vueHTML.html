@@ -6,6 +6,7 @@
    <link rel='stylesheet' type='text/css' href='file2.css'> 
    <title>Good</title>
    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+   <script src="functionsForSite.js"></script>
 </head>
  
 <body>
@@ -25,13 +26,15 @@
      </div>
   </div>
   <script>
+    Vue.check();
     new Vue ({
         el:'#flexDiv' ,
         data: {
-          seen:true,
+          seen:false,
         },
-        created() {
-           localStorage.removeItem('login');
+        check() {
+ //         console.log(localStorage.getItem('login'))
+ //          localStorage.removeItem('login');
             if (localStorage.getItem('login') == null && localStorage.getItem('password')==null) {
               this.seen=true;
             } 
