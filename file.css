@@ -104,3 +104,8 @@ a {
     border-radius:10px;
     background:transparent; 
 }
+
+.round {
+    border-radius: 100px;
+    
+}
