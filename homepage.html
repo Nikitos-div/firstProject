@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+   <link rel='stylesheet' type='text/css' href='fileHome.css'> 
+   <title>HOME</title>
+
+   <script>
+       function blockForm() {
+        var elements = document.getElementById('formInfo')
+        var element=elements.getElementsByTagName('input');
+        for (var i=0; i<element.length;i++) {
+            element[i].value=localStorage.removeItem('pass');
+            element[i].disabled=1;
+            console.log(element[i]);
+        }
+       }
+
+        document.addEventListener('DOMContentLoaded', blockForm)
+   </script>
+
+</head >
+
+<body>
+  <div class='flexDivHome'>
+    <div class='sidebar'> 
+        <a href='homepage.html'><img src='https://peopletalk.ru/wp-content/uploads/2016/11/1480331127.jpg' width='70px' height='70px' class='round'></a>
+            <ul>
+                <li><a href='site.html'>Меню Заявок</a></li>
+                <li><a href=''> Активные заявки</a></li>
+                <li><a href=''>История</a></li>
+            </ul>
+    </div>
+     
+    <div class='workInfo'>
+      <img src='https://peopletalk.ru/wp-content/uploads/2016/11/1480331127.jpg' width='100px' height='100px' class='round'>
+
+        <div class='divTable'>
+         <form class='formInfo' id='formInfo'>
+             <label>Name</label>
+             <input type='text' name='firstname' >
+             <label>Lastname</label>
+             <input type='text' name='Lastname'>
+             <label>Department</label>
+             <input type='text' name='department'>
+         </form>
+        </div>
+     
+    </div>
+
+  </div>
+</body>
+ 
+</html>

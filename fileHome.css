@@ -1,0 +1,93 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+html {
+    background-color:orange;
+    height: 100%;
+    margin:0;
+}
+   
+   
+body {
+       margin:0;
+       height:100%;
+   
+}
+
+.flexDivHome {
+  display:flex;
+  background-color:orange;
+  height:100%;
+  flex-direction: row;
+
+}
+.sidebar {
+    order:1;
+    height:100%;
+    background-color:white;
+    width:10%;
+
+}
+
+li {
+    list-style-type: none; 
+    margin-bottom:40px;
+   }
+
+
+a {
+    text-decoration:none;
+}
+
+
+.workInfo {
+    
+    order:2;
+    width:50%;
+    height:100%;
+    border-radius:20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    background-color:white;
+    margin-left:auto;
+    margin-right:auto;
+}
+/*
+.privateInfo {
+  background-color:grey;
+  display:flex;
+  
+} */
+
+
+
+.round {
+    border-radius: 100px;
+    
+}
+
+
+.divTable {
+    background-color:orange;
+    border-radius:20px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:10%;
+    margin-bottom:10%;
+    display:flex;
+    flex-direction: column;
+    height:80%;
+    width:80%;
+    border:1px grey solid;
+}
+
+.formInfo {
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
