@@ -8,6 +8,7 @@ function authorization() {
     localStorage.setItem('lastName', lastNameOfUser);
     console.log(autlogin)
     localStorage.setItem('pass', autpass);
+    console.log(localStorage.getItem('firstname'))
     alert('Вы зарегистрированы');
     window.open('firstPage_Vue.html');
 }
