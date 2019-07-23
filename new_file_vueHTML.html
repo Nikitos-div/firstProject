@@ -24,6 +24,16 @@
         <button type='submit' id='submitButton' name='Button' onclick='foolproof()'>Зарегистрироваться</button>
       </form>
     </div>
+
+    <div class='formDivRegistration' id='formRegistration'>
+        <form class='autorizationForm'>
+           <label>Логин</label>
+           <input type="email" placeholder='Введите ваш логин' id='login'>
+           <label>Пароль</label>
+           <input type="password" id='password'>
+           <button type='button' name='good'  onclick='registration( "formRegistration" , "formAut" )'>Вернуться</button>
+        </form>
+     </div>
   </div>
   <script>
     new Vue({
@@ -33,14 +43,12 @@
       },
       methods: {
         check: function () {
-          //         console.log(localStorage.getItem('login'))
-          //          localStorage.removeItem('login');
           if (localStorage.getItem('login') == null && localStorage.getItem('password') == null) {
             this.seen = true;
           }
 
           else {
-            window.open('site.html');
+            window.open('firstPage_Vue.html');
           }
         },
       },

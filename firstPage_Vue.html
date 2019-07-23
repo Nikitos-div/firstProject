@@ -12,8 +12,14 @@
 
 <body>
     <div class='flexDiv'>
+        <header>
+            <h1>Это главная надпись</h1>
+        </header>
+
+
         <div class='sidebar'>
-            <a href='homepage.html'><img src='https://peopletalk.ru/wp-content/uploads/2016/11/1480331127.jpg' width='70px' height='70px' class='round'></a>
+            <a href='' onclick=''><img src='https://peopletalk.ru/wp-content/uploads/2016/11/1480331127.jpg'
+                    width='70px' height='70px' class='round'></a>
             <ul>
                 <li><a href=''>Меню Заявок</a></li>
                 <li><a href=''> Активные заявки</a></li>
@@ -24,9 +30,12 @@
 
         <div class='divRadio' id='radioForm'>
             <form class='radio_form'>
-                <label> НДФЛ </label><input type='radio' name='1' id='1' value='1' onclick='clickRadio("divContactNDFL")'>
-                <label>Отпуск</label><input type='radio' name='1' id='2' value='2' onclick='clickRadio("divContactHolliday")'>
-                <label>Повышение</label><input type='radio' name='1' id='3' value='3' onclick='clickRadio("divContactPromotion")'>
+                <label> НДФЛ </label><input type='radio' name='1' id='1' value='1'
+                    onclick='clickRadio("divContactNDFL")'>
+                <label>Отпуск</label><input type='radio' name='1' id='2' value='2'
+                    onclick='clickRadio("divContactHolliday")'>
+                <label>Повышение</label><input type='radio' name='1' id='3' value='3'
+                    onclick='clickRadio("divContactPromotion")'>
             </form>
         </div>
 
@@ -75,9 +84,10 @@
 
 
     <div class='workInfo' id='info' v-if='seen'>
-        <img src='https://peopletalk.ru/wp-content/uploads/2016/11/1480331127.jpg' width='100px' height='100px' class='round'>
+        <img src='https://peopletalk.ru/wp-content/uploads/2016/11/1480331127.jpg' width='100px' height='100px'
+            class='round'>
 
-        <div class='divTable'>
+        <div class='divTable' id='formInfo'>
             <form class='formInfo' id='formInfo'>
                 <label>Name</label>
                 <input type='text' name='firstname'>
@@ -98,7 +108,17 @@
             el: '#info',
             data: {
                 seen: false,
+                seenInfo:true,
+                
             },
+            methods: {
+                change: function() {
+                    if (this.seen===false) {
+
+
+                    }
+                }
+            }
         })
     </script>
 

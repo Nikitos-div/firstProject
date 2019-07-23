@@ -4,9 +4,8 @@ function authorization() {
     localStorage.setItem('login', autlogin);
     console.log(autlogin)
     localStorage.setItem('pass', autpass);
-    console.log(localStorage.removeItem('login'))
     alert('Вы зарегистрированы');
-    window.open('site.html');
+    window.open('firstPage_Vue.html');
 }
 
 function foolproof() {
