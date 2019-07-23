@@ -39,7 +39,7 @@ body {
 }
 
  header {
-    order:3;
+    order:2;
    
     background: transparent;
     height:100%;
@@ -108,4 +108,59 @@ a {
 .round {
     border-radius: 100px;
     
+}
+
+#forms {
+    display:flex;
+    order:1;
+    flex-direction:row;
+    justify-content:space-between;
+}
+
+.workInfo {
+    
+    order:1;
+    width:50%;
+    height:100%;
+    border-radius:20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    background-color:white;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.formInfo {
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.divTable {
+    background-color:orange;
+    border-radius:20px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:10%;
+    margin-bottom:10%;
+    display:flex;
+    flex-direction: column;
+    height:80%;
+    width:80%;
+    border:1px grey solid;
+}
+
+.history {
+    order:1;
+    width:50%;
+    height:100%;
+    border-radius:20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    background-color:white;
+    margin-left:auto;
+    margin-right:auto;
 }
