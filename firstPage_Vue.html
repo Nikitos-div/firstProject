@@ -8,8 +8,6 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="functionsForSite.js"></script>
     <script>
-        document.getElementById('firstname').value = localStorage.getItem('firstname');
-        document.getElementById('lastname').value = localStorage.getItem('lastname');
         document.addEventListener('DOMContentLoaded', blockForm)
     </script>
     <script>
@@ -19,6 +17,9 @@
 
 
 <body>
+     <script>
+         avatar()
+    </script>
     <div class='flexDiv' id='body'>
         <header>
             <h1>Это главная надпись</h1>
@@ -26,7 +27,7 @@
 
 
         <div class='sidebar'>
-            <a href='javascript:void(0)' v-on:click='openProfile'><img
+            <a href='javascript:void(0)' v-on:click='openProfile'><img id ='avatar'
                     src='https://peopletalk.ru/wp-content/uploads/2016/11/1480331127.jpg' width='70px' height='70px'class='round'></a>
             <ul>
                 <li><a href = 'javascript:void(0)' v-on:click = 'openMenu' >Меню Заявок</a></li>
@@ -103,7 +104,7 @@
             <div class = 'divTable' id = 'formInfo'>
                 <form class = 'formInfo' id = 'formInfo'>
                     <label>Name</label>
-                    <input type = 'text' name = 'firstname' id = 'firstname' >
+                    <input :value="name" type = 'text' name = 'firstname' id = 'firstname' >
                     <label>Lastname</label>
                     <input type = 'text' name = 'lastname' id = 'lastname'>
                     <label>Department</label>
@@ -133,9 +134,10 @@
         new Vue({
             el: '#body',
             data: {
-              
                 page: 'profile',
-
+                name: localStorage.getItem('name'),
+                lastName: localStorage.getItem('lastName'),
+                request:[],
             },
             methods: {
                 openProfile() {
@@ -154,7 +156,14 @@
                 openApplications() {
                     this.page = 'applications'
                 }
-            }
+            },
+
+            mounted() {
+                console.log(localStorage.getItem('name'), localStorage.getItem('lastName'))
+                // document.getElementById('firstname').value = localStorage.getItem('name');
+                document.getElementById('lastname').value = localStorage.getItem('lastName');
+                console.log(this.name)
+            },
         })
     </script>
 

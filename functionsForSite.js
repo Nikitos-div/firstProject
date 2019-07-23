@@ -79,3 +79,9 @@ function returnToRadio(tagName) {
     document.getElementById(tagName).style.display = 'none';
     document.getElementById('radioForm').style.display = 'block';
 }
+
+function avatar() {
+    var seed = localStorage.getItem('lastName')
+    var srcAvatar = 'https://avatars.dicebear.com/v2/:male/:'+ seed +'.svg' 
+    document.getElementByIds('avatar').src = srcAvatar
+}
