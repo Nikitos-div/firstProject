@@ -2,6 +2,10 @@ function authorization() {
     var autlogin = document.getElementById('login').value;
     var autpass = document.getElementById('password').value;
     localStorage.setItem('login', autlogin);
+    var nameOfUser = document.getElementById('firstname').value;
+    localStorage.setItem('name', nameOfUser);
+    var lastNameOfUser = document.getElementById('lastname').value;
+    localStorage.setItem('lastName', lastNameOfUser);
     console.log(autlogin)
     localStorage.setItem('pass', autpass);
     alert('Вы зарегистрированы');

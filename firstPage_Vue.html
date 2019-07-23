@@ -8,6 +8,8 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="functionsForSite.js"></script>
     <script>
+        document.getElementById('firstname').value = localStorage.getItem('firstname');
+        document.getElementById('lastname').value = localStorage.getItem('lastname');
         document.addEventListener('DOMContentLoaded', blockForm)
     </script>
 </head>
@@ -98,9 +100,9 @@
             <div class = 'divTable' id = 'formInfo'>
                 <form class = 'formInfo' id = 'formInfo'>
                     <label>Name</label>
-                    <input type = 'text' name = 'firstname'>
+                    <input type = 'text' name = 'firstname' id = 'firstname' >
                     <label>Lastname</label>
-                    <input type = 'text' name = 'lastname'>
+                    <input type = 'text' name = 'lastname' id = 'lastname'>
                     <label>Department</label>
                     <input type = 'text' name = 'department'>
                 </form>
