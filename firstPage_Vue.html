@@ -7,6 +7,9 @@
     <title>Good</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="functionsForSite.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', blockForm)
+    </script>
 </head>
 
 
@@ -22,8 +25,8 @@
                     src='https://peopletalk.ru/wp-content/uploads/2016/11/1480331127.jpg' width='70px' height='70px'class='round'></a>
             <ul>
                 <li><a href = 'javascript:void(0)' v-on:click = 'openMenu' >Меню Заявок</a></li>
-                <li><a href = 'javascript:void(0)' v-on:click = ''> Активные заявки</a></li>
-                <li><a href =' javascript:void(0)' v-on:click = 'openHistory'>История</a></li>
+                <li><a href = 'javascript:void(0)' v-on:click = 'openApplications'> Активные заявки</a></li>
+                <li><a href = 'javascript:void(0)' v-on:click = 'openHistory'>История</a></li>
                 <li><a href = 'javascript:void(0)' v-on:click = 'openSettings'>Настройки</a></li>
             </ul>
         </div>
@@ -112,6 +115,10 @@
         <div class = 'settings' v-if = 'page === "settings"'>
            <h1>Настройки</h1> 
         </div>
+
+        <div class = 'applications' v-if = 'page === "applications"'>
+           <h1>Заявки</h1>
+        </div>
     </div>
 
 
@@ -121,9 +128,7 @@
         new Vue({
             el: '#body',
             data: {
-                seenForms: false,
-                seenInfo: false,
-                seenHistory: false,
+              
                 page: 'profile',
 
             },
@@ -140,7 +145,10 @@
                 },
                 openMenu() {
                     this.page = 'menu'
-                } 
+                }, 
+                openApplications() {
+                    this.page = 'applications'
+                }
             }
         })
     </script>
