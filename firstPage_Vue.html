@@ -18,16 +18,17 @@
 
 
         <div class='sidebar'>
-            <a href='javascript:void(0)' v-on:click='change'><img
+            <a href='javascript:void(0)' v-on:click='openProfile'><img
                     src='https://peopletalk.ru/wp-content/uploads/2016/11/1480331127.jpg' width='70px' height='70px'class='round'></a>
             <ul>
-                <li><a href=''>Меню Заявок</a></li>
-                <li><a href=''> Активные заявки</a></li>
-                <li><a href='javascript:void(0)' v-on:click='openHistory'>История</a></li>
+                <li><a href = 'javascript:void(0)' v-on:click = 'openMenu' >Меню Заявок</a></li>
+                <li><a href = 'javascript:void(0)' v-on:click = ''> Активные заявки</a></li>
+                <li><a href =' javascript:void(0)' v-on:click = 'openHistory'>История</a></li>
+                <li><a href = 'javascript:void(0)' v-on:click = 'openSettings'>Настройки</a></li>
             </ul>
         </div>
 
-        <div id='forms' v-if='seenInfo'>
+        <div id='forms' v-if='page === "menu"'>
 
             <div class='divRadio' id='radioForm'>
                 <form class='radio_form'>
@@ -87,25 +88,29 @@
 
 
 
-        <div class='workInfo' id='info' v-if='seen'>
-            <img src='https://peopletalk.ru/wp-content/uploads/2016/11/1480331127.jpg' width='100px' height='100px'
-                class='round'>
+        <div class = 'workInfo' id = 'info' v-if = "page === 'profile'">
+            <img src = 'https://peopletalk.ru/wp-content/uploads/2016/11/1480331127.jpg' width='100px' height='100px'
+                class = 'round'>
 
-            <div class='divTable' id='formInfo'>
-                <form class='formInfo' id='formInfo'>
+            <div class = 'divTable' id = 'formInfo'>
+                <form class = 'formInfo' id = 'formInfo'>
                     <label>Name</label>
-                    <input type='text' name='firstname'>
+                    <input type = 'text' name = 'firstname'>
                     <label>Lastname</label>
-                    <input type='text' name='Lastname'>
+                    <input type = 'text' name = 'lastname'>
                     <label>Department</label>
-                    <input type='text' name='department'>
+                    <input type = 'text' name = 'department'>
                 </form>
             </div>
 
 
         </div>
-        <div class='history' v-if ='seenHistory'>
-          
+        <div class = 'history' v-if = 'page === "history"'>
+          <h1>История</h1>
+        </div>
+
+        <div class = 'settings' v-if = 'page === "settings"'>
+           <h1>Настройки</h1> 
         </div>
     </div>
 
@@ -116,33 +121,26 @@
         new Vue({
             el: '#body',
             data: {
-                seen: false,
-                seenInfo: true,
-                seenHistory:false,
+                seenForms: false,
+                seenInfo: false,
+                seenHistory: false,
+                page: 'profile',
 
             },
             methods: {
-                change: function () {
-                    if (this.seen === false && this.seenInfo === true && this.seenHistory===true) {
-                        this.seen = true
-                        this.seenInfo = false
-                        this.seenHistory = false
-                    }
-                    else {
-                        if (this.seen === true && this.seenHistory === true) {
-                            this.seen = false
-                            this.seenHistory = false
-                            this.seenInfo = true
-                        }
-                    }
+                openProfile() {
+                    this.page = 'profile'
+
                 },
-                openHistory:function() {
-                    if (this.seen === true || this.seenInfo === true) {
-                        this.seenHistory = true
-                        this.seen = false
-                        this.seenInfo = false
-                    } 
-                }
+                openHistory() {
+                    this.page = 'history'
+                },
+                openSettings() {
+                    this.page = 'settings'
+                },
+                openMenu() {
+                    this.page = 'menu'
+                } 
             }
         })
     </script>
