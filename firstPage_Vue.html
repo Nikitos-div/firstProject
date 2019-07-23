@@ -126,21 +126,21 @@
                     if (this.seen === false && this.seenInfo === true && this.seenHistory===true) {
                         this.seen = true
                         this.seenInfo = false
-                        this.seenHistory=false
+                        this.seenHistory = false
                     }
                     else {
-                        if (this.seen === true && this.seenHistory===true) {
+                        if (this.seen === true && this.seenHistory === true) {
                             this.seen = false
-                            this.seenHistory=false;
+                            this.seenHistory = false
                             this.seenInfo = true
                         }
                     }
                 },
                 openHistory:function() {
-                    if (this.seen===true || this.seenInfo===true) {
-                        this.seenHistory=true;
-                        this.seen=false;
-                        this.seenInfo=false;
+                    if (this.seen === true || this.seenInfo === true) {
+                        this.seenHistory = true
+                        this.seen = false
+                        this.seenInfo = false
                     } 
                 }
             }
