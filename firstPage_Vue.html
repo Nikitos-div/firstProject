@@ -12,13 +12,14 @@
 
 <body>
     <div class='flexDiv'>
+        <div id='forms' v-if='seen'> 
         <header>
             <h1>Это главная надпись</h1>
         </header>
 
 
         <div class='sidebar'>
-            <a href='' onclick=''><img src='https://peopletalk.ru/wp-content/uploads/2016/11/1480331127.jpg'
+            <a href='' @click='check'><img src='https://peopletalk.ru/wp-content/uploads/2016/11/1480331127.jpg'
                     width='70px' height='70px' class='round'></a>
             <ul>
                 <li><a href=''>Меню Заявок</a></li>
@@ -81,9 +82,9 @@
         </div>
 
     </div>
+//
 
-
-    <div class='workInfo' id='info' v-if='seen'>
+    <div class='workInfo' id='info' >
         <img src='https://peopletalk.ru/wp-content/uploads/2016/11/1480331127.jpg' width='100px' height='100px'
             class='round'>
 
@@ -105,20 +106,19 @@
 
     <script>
         new Vue({
-            el: '#info',
+            el: '#forms',
             data: {
                 seen: false,
-                seenInfo:true,
-                
+                flag:true,
             },
             methods: {
-                change: function() {
+                check:function() {
                     if (this.seen===false) {
-
 
                     }
                 }
             }
+            
         })
     </script>
 
