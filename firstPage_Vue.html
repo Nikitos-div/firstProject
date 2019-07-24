@@ -8,18 +8,16 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="functionsForSite.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', blockForm)
-    </script>
-    <script>
         console.log(localStorage.getItem('lastname'))
     </script>
+
+     
+
 </head>
 
 
 <body>
-     <script>
-    //     avatar()
-    </script>
+  
     <div class='flexDiv' id='body'>
         <header>
             <h1>Это главная надпись</h1>
@@ -54,12 +52,12 @@
 
             <div class='formDiv' id='divContactNDFL'>
                 <form class="contact_form" action='' method=''>
-                    <input type="text" name="Firstname" placeholder="Введите ваше имя" required />
-                    <input type="text" name='Lastname' placeholder='Введите ваше фамилию' required />
-                    <input type='text' name='Otchestvo' placeholder='Введите ваше Отчество' requied />
-                    <input type='tel' name='tel' placeholder='Введите ваш телефон' required />
-                    <button type="submit">Отправить форму</button>
-                    <button type='button' onclick='returnToRadio("divContactNDFL")'>Вернуться к выбору формы</button>
+                    <input type = "text" name = "Firstname" placeholder = "Введите ваше имя" required />
+                    <input type = "text" name = 'Lastname' placeholder = 'Введите ваше фамилию' required />
+                    <input type = 'text' name = 'Otchestvo' placeholder = 'Введите ваше Отчество' requied />
+                    <input type = 'tel' name = 'tel' placeholder='Введите ваш телефон' required />
+                    <button type = "button" @click = 'addNDFL()'>Отправить форму</button>
+                    <button type = 'button' onclick = 'returnToRadio("divContactNDFL")'>Вернуться к выбору формы</button>
                 </form>
             </div>
 
@@ -122,10 +120,15 @@
            <h1>Настройки</h1> 
         </div>
 
-        <div class = 'applications' v-if = 'page === "applications"'>
+        <div id = 'first' class = 'applications' v-if = 'page === "applications"' >
            <h1>Заявки</h1>
+
+           <div class="request" v-for="r in requests">
+               {{ r.name }} {{r.application}}
+           </div>
         </div>
     </div>
+
 
 
 
@@ -134,10 +137,10 @@
         new Vue({
             el: '#body',
             data: {
-                page: 'profile',
+                page: 'applications',
                 name: localStorage.getItem('name'),
                 lastName: localStorage.getItem('lastName'),
-                request:[],
+                requests: [],
             },
             methods: {
                 openProfile() {
@@ -155,7 +158,10 @@
                 }, 
                 openApplications() {
                     this.page = 'applications'
-                }
+                },
+                 addNDFL() {
+                    this.requests.push({ name: localStorage.getItem('lastName'), application:'Заявка отправлена' });
+                }, 
             },
 
             mounted() {
@@ -163,7 +169,9 @@
                 // document.getElementById('firstname').value = localStorage.getItem('name');
                 document.getElementById('lastname').value = localStorage.getItem('lastName');
                 console.log(this.name)
+                document.addEventListener('DOMContentLoaded', blockForm)
             },
+
         })
     </script>
 
