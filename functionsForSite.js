@@ -104,6 +104,10 @@ function comeIn() {
 }
 
 function avatar() {
-    
+    var sprites = localStorage.getItem('login')
+    var src = 'https://avatars.dicebear.com/v2/:male/:'+sprites+'.svg'
+    alert(src);
+    var img = document.getElementById('avatar')
+    img.src.value= src; 
 }
 
