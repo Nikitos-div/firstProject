@@ -26,16 +26,17 @@
 
         <div class='sidebar'>
             <a href='javascript:void(0)' v-on:click='openProfile'><img id ='avatar'
-                    src='https://peopletalk.ru/wp-content/uploads/2016/11/1480331127.jpg' width='70px' height='70px'class='round'></a>
+                    src='https://avatars.dicebear.com/v2/:sprites/:seed.svg' width='70px' height='70px'class='round'></a>
             <ul>
                 <li><a href = 'javascript:void(0)' v-on:click = 'openMenu' >Меню Заявок</a></li>
                 <li><a href = 'javascript:void(0)' v-on:click = 'openApplications'> Активные заявки</a></li>
                 <li><a href = 'javascript:void(0)' v-on:click = 'openHistory'>История</a></li>
                 <li><a href = 'javascript:void(0)' v-on:click = 'openSettings'>Настройки</a></li>
+                <li><a href = 'javascript:void(0)' onclick = 'deauthorize()' >Выйти</a></li>
             </ul>
         </div>
 
-        <div id='forms' v-if='page === "menu"'>
+        <div id = 'forms' v-if = 'page === "menu"'>
 
             <div class='divRadio' id='radioForm'>
                 <form class='radio_form'>
@@ -56,7 +57,7 @@
                     <input type = "text" name = 'Lastname' placeholder = 'Введите ваше фамилию' required />
                     <input type = 'text' name = 'Otchestvo' placeholder = 'Введите ваше Отчество' requied />
                     <input type = 'tel' name = 'tel' placeholder='Введите ваш телефон' required />
-                    <button type = "button" @click = 'addNDFL()'>Отправить форму</button>
+                    <button type = "button"  @click = 'addNDFL()'>Отправить форму</button>
                     <button type = 'button' onclick = 'returnToRadio("divContactNDFL")'>Вернуться к выбору формы</button>
                 </form>
             </div>
@@ -78,15 +79,15 @@
                 </form>
             </div>
 
-            <div class='formPromotion' id='divContactPromotion'>
-                <form class='contact_form' action='' method=''>
-                    <input type="text" name="Firstname" placeholder="Введите ваше имя" required />
-                    <input type="text" name='Lastname' placeholder='Введите ваше фамилию' required />
-                    <input type='text' name='nameOfYourFather' placeholder='Введите ваше Отчество' requied />
-                    <input type='email' name='email' placeholder="Введите вашу почту " required />
-                    <input type='text' name='text' placeholder="Введите название вашего отдела" required />
-                    <button type="submit">Отправить форму</button>
-                    <button type='button' onclick='returnToRadio("divContactPromotion")'>Вернуться к выбору
+            <div class = 'formPromotion' id = 'divContactPromotion'>
+                <form class = 'contact_form' action = '' method = ''>
+                    <input type = "text" name = "Firstname" placeholder = "Введите ваше имя" required />
+                    <input type = "text" name = 'Lastname' placeholder = 'Введите вашу фамилию' required />
+                    <input type = 'text' name = 'nameOfYourFather' placeholder = 'Введите ваше Отчество' requied />
+                    <input type = 'email' name = 'email' placeholder = "Введите вашу почту " required />
+                    <input type = 'text' name = 'text' placeholder = "Введите название вашего отдела" required />
+                    <button type = "submit">Отправить форму</button>
+                    <button type = 'button' onclick='returnToRadio("divContactPromotion")'>Вернуться к выбору
                         формы</button>
                 </form>
             </div>
@@ -102,7 +103,7 @@
             <div class = 'divTable' id = 'formInfo'>
                 <form class = 'formInfo' id = 'formInfo'>
                     <label>Name</label>
-                    <input :value="name" type = 'text' name = 'firstname' id = 'firstname' >
+                    <input :value = "name" type = 'text' name = 'firstname' id = 'firstname' >
                     <label>Lastname</label>
                     <input type = 'text' name = 'lastname' id = 'lastname'>
                     <label>Department</label>
@@ -122,11 +123,11 @@
 
         <div id = 'first' class = 'applications' v-if = 'page === "applications"' >
            <h1>Заявки</h1>
-
            <div class="request" v-for="r in requests">
                {{ r.name }} {{r.application}}
            </div>
         </div>
+
     </div>
 
 
@@ -159,9 +160,12 @@
                 openApplications() {
                     this.page = 'applications'
                 },
-                 addNDFL() {
+                addNDFL() {
                     this.requests.push({ name: localStorage.getItem('lastName'), application:'Заявка отправлена' });
                 }, 
+                format() {
+                   var a = JSON.stringify(this.requests)
+                }
             },
 
             mounted() {

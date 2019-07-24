@@ -79,3 +79,31 @@ function returnToRadio(tagName) {
     document.getElementById(tagName).style.display = 'none';
     document.getElementById('radioForm').style.display = 'block';
 }
+
+function deauthorize() {
+    localStorage.removeItem('login');
+    localStorage.removeItem('password');
+    localStorage.removeItem('name');
+    localStorage.removeItem('lastName');
+    alert('Вы вышли из своего аккаунта');
+    window.open('new_file_vueHTML.html');
+}
+
+
+function comeIn() {
+    var log = document.getElementById('myLog');
+    var pass = document.getElementById('myPass');
+    var localLog = localStorage.getItem('login');
+    var loсalPass = localStorage.getItem('pass');
+    if (log.value === localLog && pass.value === localPass) {
+        window.open('firstPage_Vue.html')
+    }
+    else {
+        alert('Неверный логин или пароль');
+    }
+}
+
+function avatar() {
+    
+}
+

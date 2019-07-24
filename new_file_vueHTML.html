@@ -11,27 +11,29 @@
 
 <body>
   <div id="flexDiv" class=flexDiv>
-    <div class='formDiv' v-if='seen'>
+    <div class='formDiv'  v-if = 'page === "authorization"'>
       <form id='formAut' class='authorizationForm' method="">
-        <input type="text" name="Firstname" placeholder="Введите ваше имя" required />
-        <input type="text" name='Lastname' placeholder='Введите ваше фамилию' required />
+        <input type = "text" name = "Firstname" placeholder = "Введите ваше имя" id = 'firstname' required />
+        <input type = "text" name = 'Lastname' placeholder = 'Введите ваше фамилию' id = 'lastname' required />
         <label>Логин</label>
-        <input type="email" placeholder='Введите ваш логин' id='login' required />
+        <input type = "email" placeholder = 'Введите ваш логин' id = 'login' required />
         <label>Пароль</label>
-        <input type="password" id='password' required />
+        <input type = "password" id = 'password' required />
         <label>Подтвердите пароль</label>
-        <input type="password" id='password_check' required />
-        <button type='submit' id='submitButton' name='Button' onclick='foolproof()'>Зарегистрироваться</button>
+        <input type = "password" id = 'password_check' required />
+        <button type = 'submit' id = 'submitButton' name = 'Button' onclick='foolproof()'>Зарегистрироваться</button>
+        <button type = 'button' name = 'Button' @click = 'openFormReg()'>Уже зарегистрированы?</button>
       </form>
     </div>
 
-    <div class='formDivRegistration' id='formRegistration'>
-        <form class='autorizationForm'>
+    <div class='formDivRegistration' id='formRegistration' v-if = 'page === "registration"'>
+        <form class='authorizationForm'>
            <label>Логин</label>
-           <input type="email" placeholder='Введите ваш логин' id='login'>
+           <input type="email" placeholder='Введите ваш логин' id = 'myLog'>
            <label>Пароль</label>
-           <input type="password" id='password'>
-           <button type='button' name='good'  onclick='registration( "formRegistration" , "formAut" )'>Вернуться</button>
+           <input type="password" id = 'myPass'>
+           <button type = 'submit' onclick = 'comeIn()'>Войти</button>
+           <button type = 'button' name = 'good'  @click = 'openFormAuth()'>Вернуться</button>
         </form>
      </div>
   </div>
@@ -39,7 +41,7 @@
     new Vue({
       el: '#flexDiv',
       data: {
-        seen: false,
+        page: 'authorization',
       },
       methods: {
         check: function () {
@@ -51,10 +53,13 @@
             window.open('firstPage_Vue.html');
           }
         },
-      },
-        created: function () {
-          this.check()
+        openFormAuth() {
+          this.page = 'authorization';
         },
+        openFormReg() {
+          this.page = 'registration';
+        }
+      },
       })
   </script>
 </body>
