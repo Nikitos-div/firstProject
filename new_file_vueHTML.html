@@ -14,8 +14,18 @@
   <div id="flexDiv" class=flexDiv>
     <div class='formDiv' v-if='page === "authorization"'>
       <form id='formAut' class='authorizationForm' method="">
+        <label>Ваше имя</label>
         <input type="text" name="Firstname" placeholder="Введите ваше имя" id='firstname' required />
+        <label>Ваша фамилия</label>
         <input type="text" name='Lastname' placeholder='Введите ваше фамилию' id='lastname' required />
+        <label>Ваша должность в компании TakeWing</label>
+        <select required>
+          <option>ефрейтор</option>
+          <option>группенфюрер</option>
+          <option>штурбанфюрер</option>
+          <option>уберменш</option>
+
+        </select>
         <label>Логин</label>
         <input type="email" placeholder='Введите ваш логин' id='login' required />
         <label>Пароль</label>
