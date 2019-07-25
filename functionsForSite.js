@@ -43,7 +43,6 @@ function blockForm() {
     var elements = document.getElementById('formInfo')
     var element = elements.getElementsByTagName('input');
     for (var i = 0; i < element.length; i++) {
-        element[i].value = localStorage.removeItem('pass');
         element[i].disabled = 1;
         console.log(element[i]);
     }
@@ -91,12 +90,16 @@ function deauthorize() {
 
 
 function comeIn() {
+    alert('проверка1')
     var log = document.getElementById('myLog');
     var pass = document.getElementById('myPass');
     var localLog = localStorage.getItem('login');
     var loсalPass = localStorage.getItem('pass');
-    if (log.value === localLog && pass.value === localPass) {
+    alert('проверка')
+    if (log.value === localLog && pass.value === loсalPass ) {
+        alert('успешно введен пароль и логин')
         window.open('firstPage_Vue.html')
+
     }
     else {
         alert('Неверный логин или пароль');
@@ -105,9 +108,26 @@ function comeIn() {
 
 function avatar() {
     var sprites = localStorage.getItem('login')
-    var src = 'https://avatars.dicebear.com/v2/:male/:'+sprites+'.svg'
-    alert(src);
+    var othersrc = 'https://api.adorable.io/avatars/209/'+sprites+'.png '
+   /* var hrefForImage = 'https://avatars.dicebear.com/v2/:male/:'+sprites+'.svg' */
+    alert(othersrc);
     var img = document.getElementById('avatar')
-    img.src.value= src; 
+    img.src= othersrc; 
 }
+
+ function checkRegistration() {
+    var localLog = localStorage.getItem('login');
+    var localPass = localStorage.getItem('pass');
+    if (localLog != null && localPass != null) {
+      alert('Пользователь на этом компьютере уже зарегистрирован, войдите в свой аккаунт')
+      var button = document.getElementById('formAut')
+      button.disabled = true;
+      var elements = document.getElementById('formAut')
+      var element = elements.getElementsByTagName('input');
+      for (var i = 0; i < element.length; i++) {
+        element[i].disabled = true;
+        console.log(element[i]);
+      }
+    }
+  }
 
