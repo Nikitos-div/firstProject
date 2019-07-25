@@ -24,7 +24,6 @@
             <h1>Это главная надпись</h1>
         </header>
 
-
         <div class = 'sidebar'>
             <a href = 'javascript:void(0)' v-on:click = 'openProfile'><img id = 'avatar' src = '' width = '70px' height = '70px'
                     class = 'round'></a>
@@ -38,7 +37,6 @@
         </div>
 
         <div id = 'forms' v-if = 'page === "menu"'>
-
             <div class = 'divRadio' id = 'radioForm'>
                 <form class = 'radio_form'>
                     <label> НДФЛ </label><input type='radio' name = '1' id = '1' value = '1'
@@ -51,7 +49,6 @@
             </div>
 
 
-
             <div class = 'formDiv' id = 'divContactNDFL'>
                 <form class = "contact_form" action = '' method = ''>
                     <input type = "text" name = "Firstname" placeholder = "Введите ваше имя" required />
@@ -62,7 +59,6 @@
                     <button type = 'button' onclick = 'returnToRadio("divContactNDFL")'>Вернуться к выбору формы</button>
                 </form>
             </div>
-
 
 
             <div class = 'formHoliday' id = 'divContactHolliday'>
@@ -79,6 +75,7 @@
                         формы</button>
                 </form>
             </div>
+
 
             <div class = 'formPromotion' id = 'divContactPromotion'>
                 <form class = 'contact_form' action = '' method = ''>
@@ -98,9 +95,7 @@
 
 
         <div class = 'workInfo' id = 'info' v-if = "page === 'profile'">
-            <img src = '' width = '100px' height = '100px' 
-                class = 'round' id = 'firstImage'>
-
+            <img src = '' width = '100px' height = '100px' class = 'round' id = 'firstImage'>
             <div class = 'divTable' id = 'formInfo'>
                 <form class = 'formInfo' id = 'formInfo'>
                     <label>Name</label>
@@ -111,16 +106,18 @@
                     <input type = 'text' name = 'department'>
                 </form>
             </div>
-
-
         </div>
+
+
         <div class = 'history' v-if = 'page === "history"'>
             <h1>История</h1>
         </div>
 
+
         <div class = 'settings' v-if = 'page === "settings"'>
             <h1>Настройки</h1>
         </div>
+
 
         <div id = 'first' class = 'applications' v-if = 'page === "applications"'>
             <h1>Заявки</h1>
@@ -131,10 +128,7 @@
 
     </div>
 
-
-
-
-
+    
     <script>
         new Vue({
             el: '#body',
