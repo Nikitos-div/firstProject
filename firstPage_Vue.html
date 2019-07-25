@@ -2,11 +2,11 @@
 <html>
 
 <head>
-    <meta charset='utf-8'>
-    <link rel='stylesheet' type='text/css' href='file.css'>
+    <meta charset = 'utf-8'>
+    <link rel = 'stylesheet' type = 'text/css' href = 'file.css'>
     <title>Good</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="functionsForSite.js"></script>
+    <script src = "https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src = "functionsForSite.js"></script>
     <script>
         console.log(localStorage.getItem('lastname'))
     </script>
@@ -19,76 +19,76 @@
 <body>
 
 
-    <div class='flexDiv' id='body'>
+    <div class = 'flexDiv' id = 'body'>
         <header>
             <h1>Это главная надпись</h1>
         </header>
 
 
-        <div class='sidebar'>
-            <a href='javascript:void(0)' v-on:click='openProfile'><img id='avatar' src='' width='70px' height='70px'
-                    class='round'></a>
+        <div class = 'sidebar'>
+            <a href = 'javascript:void(0)' v-on:click = 'openProfile'><img id = 'avatar' src = '' width = '70px' height = '70px'
+                    class = 'round'></a>
             <ul>
-                <li><a href='javascript:void(0)' v-on:click='openMenu'>Меню Заявок</a></li>
-                <li><a href='javascript:void(0)' v-on:click='openApplications'> Активные заявки</a></li>
-                <li><a href='javascript:void(0)' v-on:click='openHistory'>История</a></li>
-                <li><a href='javascript:void(0)' v-on:click='openSettings'>Настройки</a></li>
-                <li><a href='javascript:void(0)' onclick='deauthorize()'>Выйти</a></li>
+                <li><a href = 'javascript:void(0)' v-on:click = 'openMenu'>Меню Заявок</a></li>
+                <li><a href = 'javascript:void(0)' v-on:click = 'openApplications'> Активные заявки</a></li>
+                <li><a href = 'javascript:void(0)' v-on:click = 'openHistory'>История</a></li>
+                <li><a href = 'javascript:void(0)' v-on:click = 'openSettings'>Настройки</a></li>
+                <li><a href = 'javascript:void(0)' onclick = 'deauthorize()'>Выйти</a></li>
             </ul>
         </div>
 
-        <div id='forms' v-if='page === "menu"'>
+        <div id = 'forms' v-if = 'page === "menu"'>
 
-            <div class='divRadio' id='radioForm'>
-                <form class='radio_form'>
-                    <label> НДФЛ </label><input type='radio' name='1' id='1' value='1'
-                        onclick='clickRadio("divContactNDFL")'>
-                    <label>Отпуск</label><input type='radio' name='1' id='2' value='2'
-                        onclick='clickRadio("divContactHolliday")'>
-                    <label>Повышение</label><input type='radio' name='1' id='3' value='3'
-                        onclick='clickRadio("divContactPromotion")'>
+            <div class = 'divRadio' id = 'radioForm'>
+                <form class = 'radio_form'>
+                    <label> НДФЛ </label><input type='radio' name = '1' id = '1' value = '1'
+                        onclick = 'clickRadio("divContactNDFL")'>
+                    <label>Отпуск</label><input type = 'radio' name = '1' id = '2' value = '2'
+                        onclick = 'clickRadio("divContactHolliday")'>
+                    <label>Повышение</label><input type = 'radio' name = '1' id = '3' value = '3'
+                        onclick = 'clickRadio("divContactPromotion")'>
                 </form>
             </div>
 
 
 
-            <div class='formDiv' id='divContactNDFL'>
-                <form class="contact_form" action='' method=''>
-                    <input type="text" name="Firstname" placeholder="Введите ваше имя" required />
-                    <input type="text" name='Lastname' placeholder='Введите ваше фамилию' required />
-                    <input type='text' name='Otchestvo' placeholder='Введите ваше Отчество' requied />
-                    <input type='tel' name='tel' placeholder='Введите ваш телефон' required />
-                    <button type="button" @click='addNDFL()'>Отправить форму</button>
-                    <button type='button' onclick='returnToRadio("divContactNDFL")'>Вернуться к выбору формы</button>
+            <div class = 'formDiv' id = 'divContactNDFL'>
+                <form class = "contact_form" action = '' method = ''>
+                    <input type = "text" name = "Firstname" placeholder = "Введите ваше имя" required />
+                    <input type = "text" name = 'Lastname' placeholder = 'Введите ваше фамилию' required />
+                    <input type = 'text' name = 'Otchestvo' placeholder = 'Введите ваше Отчество' requied />
+                    <input type = 'tel' name = 'tel' placeholder = 'Введите ваш телефон' required />
+                    <button type = "button" @click = 'addNDFL()'>Отправить форму</button>
+                    <button type = 'button' onclick = 'returnToRadio("divContactNDFL")'>Вернуться к выбору формы</button>
                 </form>
             </div>
 
 
 
-            <div class='formHoliday' id='divContactHolliday'>
-                <form class='contact_form' action='' method=''>
-                    <input type="text" name="Firstname" placeholder="Введите ваше имя" required />
-                    <input type="text" name='Lastname' placeholder='Введите ваше фамилию' required />
-                    <input type='text' name='Otchestvo' placeholder='Введите ваше Отчество' requied />
-                    <input type='email' name='email' placeholder="Введите вашу почту " required />
+            <div class = 'formHoliday' id = 'divContactHolliday'>
+                <form class = 'contact_form' action = '' method = ''>
+                    <input type = "text" name = "Firstname" placeholder = "Введите ваше имя" required />
+                    <input type = "text" name = 'Lastname' placeholder = 'Введите ваше фамилию' required />
+                    <input type = 'text' name = 'Otchestvo' placeholder = 'Введите ваше Отчество' requied />
+                    <input type = 'email' name = 'email' placeholder = "Введите вашу почту " required />
                     <label> Выберите промежуток отпуска</label>
-                    <input type='date' required>
-                    <input type='date' required>
-                    <button type="submit">Отправить форму</button>
-                    <button type='button' onclick='returnToRadio("divContactHolliday")'>Вернуться к выбору
+                    <input type = 'date' required>
+                    <input type = 'date' required>
+                    <button type = "submit">Отправить форму</button>
+                    <button type = 'button' onclick = 'returnToRadio("divContactHolliday")'>Вернуться к выбору
                         формы</button>
                 </form>
             </div>
 
-            <div class='formPromotion' id='divContactPromotion'>
-                <form class='contact_form' action='' method=''>
-                    <input type="text" name="Firstname" placeholder="Введите ваше имя" required />
-                    <input type="text" name='Lastname' placeholder='Введите вашу фамилию' required />
-                    <input type='text' name='nameOfYourFather' placeholder='Введите ваше Отчество' requied />
-                    <input type='email' name='email' placeholder="Введите вашу почту " required />
-                    <input type='text' name='text' placeholder="Введите название вашего отдела" required />
-                    <button type="submit">Отправить форму</button>
-                    <button type='button' onclick='returnToRadio("divContactPromotion")'>Вернуться к выбору
+            <div class = 'formPromotion' id = 'divContactPromotion'>
+                <form class = 'contact_form' action = '' method = ''>
+                    <input type = "text" name = "Firstname" placeholder = "Введите ваше имя" required />
+                    <input type = "text" name = 'Lastname' placeholder = 'Введите вашу фамилию' required />
+                    <input type = 'text' name = 'nameOfYourFather' placeholder = 'Введите ваше Отчество' requied />
+                    <input type = 'email' name = 'email' placeholder = "Введите вашу почту " required />
+                    <input type = 'text' name = 'text' placeholder = "Введите название вашего отдела" required />
+                    <button type = "submit">Отправить форму</button>
+                    <button type = 'button' onclick = 'returnToRadio("divContactPromotion")'>Вернуться к выбору
                         формы</button>
                 </form>
             </div>
@@ -97,34 +97,34 @@
 
 
 
-        <div class='workInfo' id='info' v-if="page === 'profile'">
-            <img src='' width='100px' height='100px' 
-                class='round' id='firstImage'>
+        <div class = 'workInfo' id = 'info' v-if = "page === 'profile'">
+            <img src = '' width = '100px' height = '100px' 
+                class = 'round' id = 'firstImage'>
 
-            <div class='divTable' id='formInfo'>
-                <form class='formInfo' id='formInfo'>
+            <div class = 'divTable' id = 'formInfo'>
+                <form class = 'formInfo' id = 'formInfo'>
                     <label>Name</label>
-                    <input :value="name" type='text' name='firstname' id='firstname'>
+                    <input :value = "name" type = 'text' name = 'firstname' id = 'firstname'>
                     <label>Lastname</label>
-                    <input type='text' name='lastname' id='lastname'>
+                    <input type = 'text' name = 'lastname' id = 'lastname'>
                     <label>Department</label>
-                    <input type='text' name='department'>
+                    <input type = 'text' name = 'department'>
                 </form>
             </div>
 
 
         </div>
-        <div class='history' v-if='page === "history"'>
+        <div class = 'history' v-if = 'page === "history"'>
             <h1>История</h1>
         </div>
 
-        <div class='settings' v-if='page === "settings"'>
+        <div class = 'settings' v-if = 'page === "settings"'>
             <h1>Настройки</h1>
         </div>
 
-        <div id='first' class='applications' v-if='page === "applications"'>
+        <div id = 'first' class = 'applications' v-if = 'page === "applications"'>
             <h1>Заявки</h1>
-            <div class="request" v-for="r in requests">
+            <div class = "request" v-for = "r in requests">
                 {{ r.name }} {{r.application}}
             </div>
         </div>
