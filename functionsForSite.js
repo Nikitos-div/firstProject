@@ -70,7 +70,6 @@ function clickRadio(tagName) {
             }
         }
     }
-
 }
 
 
@@ -115,19 +114,5 @@ function avatar() {
     img.src= othersrc; 
 }
 
- function checkRegistration() {
-    var localLog = localStorage.getItem('login');
-    var localPass = localStorage.getItem('pass');
-    if (localLog != null && localPass != null) {
-      alert('Пользователь на этом компьютере уже зарегистрирован, войдите в свой аккаунт')
-      var button = document.getElementById('formAut')
-      button.disabled = true;
-      var elements = document.getElementById('formAut')
-      var element = elements.getElementsByTagName('input');
-      for (var i = 0; i < element.length; i++) {
-        element[i].disabled = true;
-        console.log(element[i]);
-      }
-    }
-  }
+
 
