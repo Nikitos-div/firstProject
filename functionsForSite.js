@@ -1,4 +1,5 @@
 function authorization() {
+    var 
     var autlogin = document.getElementById('login').value;
     var autpass = document.getElementById('password').value;
     localStorage.setItem('login', autlogin);
@@ -79,6 +80,7 @@ function returnToRadio(tagName) {
 }
 
 function deauthorize() {
+    localStorage.removeItem('pass');
     localStorage.removeItem('login');
     localStorage.removeItem('password');
     localStorage.removeItem('name');
@@ -108,7 +110,7 @@ function comeIn() {
 function avatar() {
     var sprites = localStorage.getItem('login')
     var othersrc = 'https://api.adorable.io/avatars/209/'+sprites+'.png '
-   /* var hrefForImage = 'https://avatars.dicebear.com/v2/:male/:'+sprites+'.svg' */
+    /* var hrefForImage = 'https://avatars.dicebear.com/v2/:male/:'+sprites+'.svg' */
     alert(othersrc);
     var img = document.getElementById('avatar')
     img.src= othersrc; 
