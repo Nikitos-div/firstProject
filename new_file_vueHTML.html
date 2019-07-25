@@ -74,8 +74,10 @@
           var localLog = localStorage.getItem('login');
           var localPass = localStorage.getItem('pass');
           if (localLog != null && localPass != null) {
-            alert('Пользователь на этом компьютере уже зарегистрирован, войдите в свой аккаунт')
+            alert('Пользователь на этом компьютере уже зарегистрирован, войдите в свой аккаунт');
             var button = document.getElementById('formAut')
+            var select = document.getElementById('select');
+            select.disabled = true;
             button.disabled = true;
             var elements = document.getElementById('formAut')
             var element = elements.getElementsByTagName('input');

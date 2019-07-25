@@ -1,12 +1,14 @@
 function authorization() {
-    var 
+    
     var autlogin = document.getElementById('login').value;
     var autpass = document.getElementById('password').value;
+ /*   var position = document.getElementById('select');
+    localStorage.setItem('select' , position); */
     localStorage.setItem('login', autlogin);
     var nameOfUser = document.getElementById('firstname').value;
     localStorage.setItem('name', nameOfUser);
     var lastNameOfUser = document.getElementById('lastname').value;
-    localStorage.setItem('lastName', lastNameOfUser);
+    localStorage.setItem('lastName' , lastNameOfUser);
     console.log(autlogin)
     localStorage.setItem('pass', autpass);
     console.log(localStorage.getItem('firstname'))
