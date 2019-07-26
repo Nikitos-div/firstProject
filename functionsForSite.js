@@ -2,8 +2,9 @@ function authorization() {
     
     var autlogin = document.getElementById('login').value;
     var autpass = document.getElementById('password').value;
-    var position = document.getElementById('select');
-    localStorage.setItem('select' , position); 
+    var position = document.getElementById('selectReg');
+    var selected = position.value;
+    localStorage.setItem('select' , selected);  
     localStorage.setItem('login', autlogin);
     var nameOfUser = document.getElementById('firstname').value;
     localStorage.setItem('name', nameOfUser);
@@ -109,14 +110,18 @@ function comeIn() {
     }
 }
 
-function avatar() {
-    var sprites = localStorage.getItem('login')
-    var othersrc = 'https://api.adorable.io/avatars/209/'+sprites+'.png '
-    /* var hrefForImage = 'https://avatars.dicebear.com/v2/:male/:'+sprites+'.svg' */
-    alert(othersrc);
-    var img = document.getElementById('avatar')
-    img.src= othersrc; 
+
+function validate() {
+    var login = document.getElementById('login');
+    var string = login.value;
+    if (string.indexOf('@takewing.ru') > -1 ) {
+       
+    }
+    else {
+       alert('Вы не сотрудник')  
+    }
 }
+
 
 
 

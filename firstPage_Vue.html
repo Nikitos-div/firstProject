@@ -103,7 +103,7 @@
                     <label>Lastname</label>
                     <input  :value = 'lastName' type = 'text' name = 'lastname' id = 'lastname'disabled>
                     <label>Department</label>
-                    <input type = 'text' name = 'department'>
+                    <input :value = 'department' type = 'text' name = 'department' disabled>
                 </form>
             </div>
         </div>
@@ -137,7 +137,7 @@
                 name: localStorage.getItem('name'),
                 lastName: localStorage.getItem('lastName'),
                 requests: [],
-                department: ''
+                department: localStorage.getItem('select')
             },
             methods: {
                 openProfile() {
@@ -174,14 +174,6 @@
                     var firstImage = document.getElementById('firstImage');
                     firstImage.src = othersrc;
                 },
-                fasten() {
-                document.getElementById('firstname').value = localStorage.getItem('name');
-                document.getElementById('lastName').value = localStorage.getItem('lastName');
-                var a = document.getElementById('firstname');
-                var b = document.getElementById('lastName');
-                a.disabled = true;
-                b.disabled = true; 
-                }
             },
 
             mounted() {

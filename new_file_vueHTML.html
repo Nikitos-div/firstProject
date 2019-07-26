@@ -19,7 +19,7 @@
         <label>Ваша фамилия</label>
         <input type = "text" name = 'Lastname' placeholder = 'Введите ваше фамилию' id = 'lastname' required />
         <label>Ваша должность в компании TakeWing</label>
-        <select  id = 'select' required>
+        <select  id = 'selectReg' required>
           <option value = 'Администратор'>Администратор</option>
           <option value = 'Бухгалтер'>Бухгалтер</option>
           <option value = 'Рководитель отдела'>Руководитель отдела</option>
@@ -76,7 +76,7 @@
           if (localLog != null && localPass != null) {
             alert('Пользователь на этом компьютере уже зарегистрирован, войдите в свой аккаунт');
             var button = document.getElementById('formAut')
-            var select = document.getElementById('select');
+            var select = document.getElementById('selectReg');
             select.disabled = true;
             button.disabled = true;
             var elements = document.getElementById('formAut')
