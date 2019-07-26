@@ -2,8 +2,8 @@ function authorization() {
     
     var autlogin = document.getElementById('login').value;
     var autpass = document.getElementById('password').value;
- /*   var position = document.getElementById('select');
-    localStorage.setItem('select' , position); */
+    var position = document.getElementById('select');
+    localStorage.setItem('select' , position); 
     localStorage.setItem('login', autlogin);
     var nameOfUser = document.getElementById('firstname').value;
     localStorage.setItem('name', nameOfUser);

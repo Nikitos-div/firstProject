@@ -99,9 +99,9 @@
             <div class = 'divTable' id = 'formInfo'>
                 <form class = 'formInfo' id = 'formInfo'>
                     <label>Name</label>
-                    <input :value = "name" type = 'text' name = 'firstname' id = 'firstname'>
+                    <input :value = "name" type = 'text' name = 'firstname' id = 'firstname'disabled>
                     <label>Lastname</label>
-                    <input type = 'text' name = 'lastname' id = 'lastname'>
+                    <input  :value = 'lastName' type = 'text' name = 'lastname' id = 'lastname'disabled>
                     <label>Department</label>
                     <input type = 'text' name = 'department'>
                 </form>
@@ -137,6 +137,7 @@
                 name: localStorage.getItem('name'),
                 lastName: localStorage.getItem('lastName'),
                 requests: [],
+                department: ''
             },
             methods: {
                 openProfile() {
@@ -166,21 +167,29 @@
                 },
                 avatar() {
                     var sprites = localStorage.getItem('login');
-                   var othersrc = 'https://api.adorable.io/avatars/209/' + sprites + '.png ' ;
+                    var othersrc = 'https://api.adorable.io/avatars/209/' + sprites + '.png ' ;
                  /*   var hrefForImage = 'https://avatars.dicebear.com/v2/:male/:'+sprites+'.svg'  */
                     var img = document.getElementById('avatar');
                     img.src = othersrc;
                     var firstImage = document.getElementById('firstImage');
                     firstImage.src = othersrc;
+                },
+                fasten() {
+                document.getElementById('firstname').value = localStorage.getItem('name');
+                document.getElementById('lastName').value = localStorage.getItem('lastName');
+                var a = document.getElementById('firstname');
+                var b = document.getElementById('lastName');
+                a.disabled = true;
+                b.disabled = true; 
                 }
             },
 
             mounted() {
                 console.log(localStorage.getItem('name'), localStorage.getItem('lastName'))
-                // document.getElementById('firstname').value = localStorage.getItem('name');
-                document.getElementById('lastname').value = localStorage.getItem('lastName');
-                console.log(this.name)
-                document.addEventListener('DOMContentLoaded', blockForm)
+              /*  document.getElementById('firstname').value = localStorage.getItem('name');
+                document.getElementById('lastName').value = localStorage.getItem('lastName');
+              
+                document.addEventListener('DOMContentLoaded', blockForm); */
             },
 
             created: function () {
