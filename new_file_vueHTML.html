@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset = 'utf-8'>
+  <link rel = 'stylesheet' type = 'text/css' href = 'file2.css'>
+  <title>Good</title>
+  <script src = "https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src = "functionsForSite.js"></script>
+</head>
+
+<body>
+
+  <div id = "flexDiv" class = 'flexDiv'>
+    <div class = 'formDiv' v-if = 'page === "authorization"'>
+      <form id = 'formAut' class = 'authorizationForm' method="">
+        <label>Ваше имя</label>
+        <input type = "text" name = "Firstname" placeholder = "Введите ваше имя" id = 'firstname' required />
+        <label>Ваша фамилия</label>
+        <input type = "text" name = 'Lastname' placeholder = 'Введите ваше фамилию' id = 'lastname' required />
+        <label>Ваша должность в компании TakeWing</label>
+        <select  id = 'selectReg' required>
+          <option value = 'Администратор'>Администратор</option>
+          <option value = 'Бухгалтер'>Бухгалтер</option>
+          <option value = 'Рководитель отдела'>Руководитель отдела</option>
+          <option value = 'Штатный сотрудник'>Штатный сотрудник</option>
+
+        </select>
+        <label>Логин</label>
+        <input type = "email" placeholder = 'Введите ваш логин' id = 'login' required />
+        <label>Пароль</label>
+        <input type = "password" id = 'password' required />
+        <label>Подтвердите пароль</label>
+        <input type = "password" id = 'password_check' required />
+        <button type = 'submit' id = 'submitButton' name = 'Button' onclick = 'foolproof()'>Зарегистрироваться</button>
+        <button type = 'button' name = 'Button' @click = 'openFormReg()'>Уже зарегистрированы?</button>
+      </form>
+    </div>
+
+    <div class = 'formDivRegistration' id = 'formRegistration' v-if = 'page === "registration"'>
+      <form class = 'authorizationForm'>
+        <label>Логин</label>
+        <input type = "email" placeholder = 'Введите ваш логин' id = 'myLog'>
+        <label>Пароль</label>
+        <input type = "password" id = 'myPass'>
+        <button type = 'button' onclick = 'comeIn()'>Войти</button>
+        <button type = 'button' name = 'good' @click = 'openFormAuth()'>Вернуться</button>
+      </form>
+    </div>
+  </div>
+  <script>
+    new Vue({
+      el: '#flexDiv',
+      data: {
+        page: 'authorization',
+      },
+      methods: {
+        check: function () {
+          if (localStorage.getItem('login') == null && localStorage.getItem('password') == null) {
+            this.seen = true;
+          }
+
+          else {
+            window.open('firstPage_Vue.html');
+          }
+        },
+        openFormAuth() {
+          this.page = 'authorization';
+        },
+        openFormReg() {
+          this.page = 'registration';
+        },
+        checkRegistration() {
+          var localLog = localStorage.getItem('login');
+          var localPass = localStorage.getItem('pass');
+          if (localLog != null && localPass != null) {
+            alert('Пользователь на этом компьютере уже зарегистрирован, войдите в свой аккаунт');
+            var button = document.getElementById('formAut')
+            var select = document.getElementById('selectReg');
+            select.disabled = true;
+            button.disabled = true;
+            var elements = document.getElementById('formAut')
+            var element = elements.getElementsByTagName('input');
+            for (var i = 0; i < element.length; i++) {
+              element[i].disabled = true;
+              console.log(element[i]);
+            }
+          }
+        }
+      },
+      created: function(){
+       this.checkRegistration();
+       }
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset='utf-8'>
+   <link rel='stylesheet' type='text/css' href='file2.css'> 
+   <title>Good</title>
+  <script src="functionsForSite.js"></script>
+
+   <script>
+  //   function registration(one,two) {
+    //  document.getElementById(one).style.display='none';
+   //   document.getElementById(two).style.display='block';
+    
+   </script>
+
+  
+
+
+</head>
+   
+<body> 
+   <div class='flexDiv' >
+      <div class='formDiv' id='formAut'>
+        <form class='authorizationForm' action='' method="">
+          <input type="text" name="firstname" placeholder="Введите ваше имя" id = 'firstname' required/>
+          <input type="text" name='lastname' placeholder='Введите ваше фамилию' id = 'lastname' required/>
+          <label>Логин</label>
+          <input type="email" placeholder='Введите ваш логин' id='login' required/>
+          <label>Пароль</label>
+          <input type="password" id='password' required />
+          <label>Подтвердите пароль</label>
+          <input type="password" id='password_check'  required/>
+          <button type='button' id='submitButton' name='Button'  onclick='foolproof()'>Зарегистрироваться</button>
+          <button type='button'  onclick='registration("formAut","formRegistration")' >Уже зарегистрированы?</button>
+        </form>
+      </div>
+  
+    <div class='formDivRegistration' id='formRegistration'>
+      <form class='autorizationForm'>
+          <label>Логин</label>
+         <input type="email" placeholder='Введите ваш логин' id='login'>
+         <label>Пароль</label>
+         <input type="password" id='password'>
+         <button type='button' name='good'  onclick='registration( "formRegistration" , "formAut" )'>Вернуться</button>
+      </form>
+   </div>
+
+      
+   </div>
+   <footer>
+      footer text
+   </footer>
+</body>
+
+
+</html>
